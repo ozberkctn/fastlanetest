@@ -10,6 +10,7 @@ module Sigh
       # get the command line inputs and parse those into the vars we need...
       ipa, signing_identity, provisioning_profiles, entitlements, version, display_name, short_version, bundle_version, new_bundle_id, use_app_entitlements, keychain_path = get_inputs(options, args)
       # ... then invoke our programmatic interface with these vars
+      puts 'Hello World!'
       unless resign(ipa, signing_identity, provisioning_profiles, entitlements, version, display_name, short_version, bundle_version, new_bundle_id, use_app_entitlements, keychain_path)
         UI.user_error!("Failed to re-sign .ipa")
       end
