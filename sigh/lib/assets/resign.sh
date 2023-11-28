@@ -322,12 +322,14 @@ fi
 # Search the first .app file within the Payload directory
 # shellcheck disable=SC2010
 echo "ozberk=tempdir=$TEMP_DIR"
-ls $TEMP_DIR
+ls "$TEMP_DIR"
 echo "ozberk=ls break"
 ls "$TEMP_DIR/Payload/"
 echo "ozberk=ls full folder"
 ls
 echo "ozberk=ls end"
+cd "$TEMP_DIR"
+ls
 APP_NAME=$(ls "$TEMP_DIR/Payload/" | grep ".app$" | head -1)
 
 # Make sure that PATH includes the location of the PlistBuddy helper tool as its location is not standard
