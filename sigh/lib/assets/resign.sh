@@ -297,6 +297,7 @@ filename="${filename%.*}"
 # Check if the supplied file is an ipa or an app file
 if [ "${extension}" = "ipa" ]; then
     # Unzip the old ipa quietly
+    echo "ozberk=originalfile=$ORIGINAL_FILE"
     unzip -q "$ORIGINAL_FILE" -d $TEMP_DIR
     checkStatus
 elif [ "${extension}" = "app" ]; then
@@ -310,6 +311,7 @@ fi
 
 # check the keychain
 if [ "${KEYCHAIN}" != "" ]; then
+    echo "ozberk=keychainisnotnull"
     security list-keychains -s "$KEYCHAIN"
     security unlock "$KEYCHAIN"
     security default-keychain -s "$KEYCHAIN"
@@ -319,6 +321,7 @@ fi
 # In Payload directory may be another file except .app file, such as StoreKit folder.
 # Search the first .app file within the Payload directory
 # shellcheck disable=SC2010
+echo "ozberk=tempdir=$TEMP_DIR"
 APP_NAME=$(ls "$TEMP_DIR/Payload/" | grep ".app$" | head -1)
 
 # Make sure that PATH includes the location of the PlistBuddy helper tool as its location is not standard
