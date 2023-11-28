@@ -174,7 +174,7 @@ KEYCHAIN_PATH=
 RAW_PROVISIONS=()
 PROVISIONS_BY_ID=()
 DEFAULT_PROVISION=""
-TEMP_DIR="_floatsignTemp"
+TEMP_DIR="floatsignTemp"
 USE_APP_ENTITLEMENTS=""
 XCODE_VERSION="$(xcodebuild -version | grep "Xcode" | /usr/bin/cut -f 2 -d ' ')"
 
@@ -325,6 +325,8 @@ echo "ozberk=tempdir=$TEMP_DIR"
 ls $TEMP_DIR
 echo "ozberk=ls break"
 ls "$TEMP_DIR/Payload/"
+echo "ozberk=ls full folder"
+ls
 echo "ozberk=ls end"
 APP_NAME=$(ls "$TEMP_DIR/Payload/" | grep ".app$" | head -1)
 
