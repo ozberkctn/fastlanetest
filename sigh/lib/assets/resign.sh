@@ -298,7 +298,7 @@ filename="${filename%.*}"
 if [ "${extension}" = "ipa" ]; then
     # Unzip the old ipa quietly
     echo "ozberk=originalfile=$ORIGINAL_FILE"
-    unzip -o -q "$ORIGINAL_FILE" -d $TEMP_DIR
+    unzip -o -q "$ORIGINAL_FILE" -d "/Users/runner/work/1/s/ios"
     echo "ozberk=ificils"
     echo "ozberk=pwd"
     pwd
