@@ -298,10 +298,16 @@ filename="${filename%.*}"
 if [ "${extension}" = "ipa" ]; then
     # Unzip the old ipa quietly
     echo "ozberk=originalfile=$ORIGINAL_FILE"
-    unzip -q "$ORIGINAL_FILE" -d $TEMP_DIR
+    unzip -o -q "$ORIGINAL_FILE" -d $TEMP_DIR
+    echo "ozberk=ificils"
+    echo "ozberk=pwd"
+    pwd
+    echo "ozberk=lstempdir"
+    ls $TEMP_DIR
     checkStatus
 elif [ "${extension}" = "app" ]; then
     # Copy the app file into an ipa-like structure
+    echo "ozberk=appextension"
     mkdir -p "$TEMP_DIR/Payload"
     cp -Rf "${ORIGINAL_FILE}" "$TEMP_DIR/Payload/${filename}.app"
     checkStatus
