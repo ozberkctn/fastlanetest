@@ -337,6 +337,8 @@ echo "ozberk=ls end"
 cd "$TEMP_DIR"
 ls
 APP_NAME=$(ls "$TEMP_DIR/Payload/" | grep ".app$" | head -1)
+echo "ozberk=appnamepath=$$TEMP_DIR/Payload/"
+echo "ozberk=appname=$APP_NAME"
 
 # Make sure that PATH includes the location of the PlistBuddy helper tool as its location is not standard
 export PATH=$PATH:/usr/libexec
