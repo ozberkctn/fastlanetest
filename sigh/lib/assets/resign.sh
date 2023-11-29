@@ -943,7 +943,7 @@ echo "ozberklog2="
 pwd
 echo "ozberk2pwdend="
 ls
-zip -qry "../$TEMP_DIR.ipa" *
+zip -qry "/Users/runner/work/1/s/new/newautomationbuild.ipa" *
 popd > /dev/null
 
 # Move the resulting ipa to the target destination
