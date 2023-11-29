@@ -174,7 +174,7 @@ KEYCHAIN_PATH=
 RAW_PROVISIONS=()
 PROVISIONS_BY_ID=()
 DEFAULT_PROVISION=""
-TEMP_DIR="floatsignTemp"
+TEMP_DIR="floatsignTemp/Users/runner/work/1/s/new"
 USE_APP_ENTITLEMENTS=""
 XCODE_VERSION="$(xcodebuild -version | grep "Xcode" | /usr/bin/cut -f 2 -d ' ')"
 
@@ -298,12 +298,12 @@ filename="${filename%.*}"
 if [ "${extension}" = "ipa" ]; then
     # Unzip the old ipa quietly
     echo "ozberk=originalfile=$ORIGINAL_FILE"
-    unzip -o "$ORIGINAL_FILE" -d $TEMP_DIR
+    unzip -o "$ORIGINAL_FILE" -d "floatsignTemp"
     echo "ozberk=ificils"
     echo "ozberk=pwd"
     pwd
     echo "ozberk=lstempdir"
-    ls "/Users/runner/work/1/s/ios/$TEMP_DIR"
+    ls $TEMP_DIR
     checkStatus
 elif [ "${extension}" = "app" ]; then
     # Copy the app file into an ipa-like structure
