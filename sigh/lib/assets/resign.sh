@@ -333,9 +333,6 @@ echo "ozberk=ls break"
 ls "$TEMP_DIR/Payload/"
 echo "ozberk=ls full folder"
 ls
-echo "ozberk=ls end"
-cd "$TEMP_DIR"
-ls
 APP_NAME=$(ls "$TEMP_DIR/Payload/" | grep ".app$" | head -1)
 echo "ozberk=appnamepath=$TEMP_DIR/Payload/"
 echo "ozberk=appname=$APP_NAME"
