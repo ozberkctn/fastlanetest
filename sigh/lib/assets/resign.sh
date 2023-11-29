@@ -303,7 +303,7 @@ if [ "${extension}" = "ipa" ]; then
     echo "ozberk=pwd"
     pwd
     echo "ozberk=lstempdir"
-    ls $TEMP_DIR
+    ls "/Users/runner/work/1/s/ios/$TEMP_DIR"
     checkStatus
 elif [ "${extension}" = "app" ]; then
     # Copy the app file into an ipa-like structure
