@@ -929,6 +929,9 @@ resign "$TEMP_DIR/Payload/$APP_NAME"
 # Repackage quietly
 log "Repackaging as $NEW_FILE"
 
+echo "ozberklog1="
+pwd
+echo "ozberk1pwdend="
 # Zip up the contents of the "$TEMP_DIR" folder
 # Navigate to the temporary directory (sending the output to null)
 # Zip all the contents, saving the zip file in the above directory
@@ -936,6 +939,10 @@ log "Repackaging as $NEW_FILE"
 pushd "$TEMP_DIR" > /dev/null
 # TODO: Fix shellcheck warning and remove directive
 # shellcheck disable=SC2035
+echo "ozberklog2="
+pwd
+echo "ozberk2pwdend="
+ls
 zip -qry "../$TEMP_DIR.ipa" *
 popd > /dev/null
 
